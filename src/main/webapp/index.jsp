@@ -18,8 +18,8 @@
 	
 	<p>
 		<form action="nearwifi.jsp" method="post">
-			<label>LNT : <input type="text", name="lnt"> </input>, </label>
 			<label>LAT : <input type="text", name="lat"> </input> </label>
+			<label>LNT : <input type="text", name="lnt"> </input>, </label>
 			<input type="submit" value="근처 WIFI 정보 보기"></td>
 		</form>
 	</p>
