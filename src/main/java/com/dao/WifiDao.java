@@ -94,14 +94,15 @@ public class WifiDao {
 		}
     }
     
-    public void insertWifiData() {
+    public int insertWifiData() {
     	WifiDto wifiObj;
     	int start = 1;
 		int end = 0;
+		int totalPage = -1;
 		
 		try {
 			wifiObj = new WifiDto().createWifiObj(1, 1);
-			int totalPage = new WifiDto().getTotalPage(wifiObj);
+			totalPage = new WifiDto().getTotalPage(wifiObj);
 			List<Integer> list = new WifiDto().getPageList(totalPage);
 			for(Integer val : list) {
 				end += val;
@@ -113,6 +114,8 @@ public class WifiDao {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} 
+		
+		return totalPage;
     }
     
     public ResultSet selectNearWifiData(double lat, double lnt) throws SQLException {
